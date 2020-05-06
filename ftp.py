@@ -92,10 +92,6 @@ clear """)
 
             if cmd == command[11]:
                 os.system("clear")
-<<<<<<< HEAD
-=======
-
->>>>>>> 1b4508b64d490adee5377e0e501eca3d7b52b02b
             if cmd in ('q', 'quit', 'exit', 'bye'):
                 return True
 
