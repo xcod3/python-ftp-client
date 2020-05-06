@@ -36,6 +36,7 @@ def cli(prompt, reminder='Please type a valid command'):
 cd          debug           delete          get         ls
 mkdir       pwd             rmdir           send        size
 clear """)
+
             if cmd == command[1]:
                 ftp.dir()
 
