@@ -1,3 +1,6 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
 import os
 import sys
 from ftplib import FTP
@@ -32,7 +35,7 @@ def cli(prompt, reminder='Please type a valid command'):
                 print("""
 cd          debug           delete          get         ls
 mkdir       pwd             rmdir           send        size
-""")
+clear """)
             if cmd == command[1]:
                 ftp.dir()
             if cmd == command[2]:
@@ -63,7 +66,7 @@ mkdir       pwd             rmdir           send        size
                 print(ftp.set_debuglevel(int(level)))
             if cmd == command[11]:
                 os.system("clear")
-            if cmd in ('q', 'quit', 'exit'):
+            if cmd in ('q', 'quit', 'exit', 'bye'):
                 return True
             if cmd.split(' ', 1)[0] not in command:
                 print(reminder)
