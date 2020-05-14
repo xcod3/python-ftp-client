@@ -27,15 +27,22 @@ def cli(prompt, reminder='Please type a valid command'):
                 'debug',
                 'clear'
                 ]
-
-    while True:
+    shell = True
+    while shell:
         cmd = input(prompt)
         try:
             if cmd == command[0]:
+<<<<<<< HEAD
                 print("""
 cd          debug           delete          get         ls
 mkdir       pwd             rmdir           send        size
 clear """)
+=======
+                all_commands = command[:]
+                all_commands.sort()
+                print(*all_commands[0:6], sep='\t')
+                print(*all_commands[6:12], sep='\t')
+>>>>>>> 943ee5eabe6c8fcbdd5bc7f8e6d6ef0e1d97d560
 
             if cmd == command[1]:
                 ftp.dir()
@@ -94,9 +101,10 @@ clear """)
             if cmd == command[11]:
                 os.system("clear")
             if cmd in ('q', 'quit', 'exit', 'bye'):
-                return True
+                print(ftp.quit())
+                shell = False
 
-            if len(cmd.split()) and cmd.split(' ', 1)[0] not in command:
+            if len(cmd.split()) and cmd.split(' ', 1)[0] not in command and cmd.split(' ', 1)[0] not in ('q', 'quit', 'exit', 'bye'):
                 print(reminder)
 
         except ftplib.all_errors as error:
